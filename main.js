@@ -1,6 +1,6 @@
 'use strict';
 
-$document(function () {
+$(document).ready(function () {
     $('.toggle-btn').click(function () {
         $('#header').toggleClass('open')
     });
