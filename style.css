@@ -1,0 +1,854 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+    letter-spacing: 0.32rem;
+    color: ;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+img {
+    width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1024px;
+    padding: 0 5%;
+    margin: 0 auto;
+}
+
+.sec-title {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+section {
+    scroll-margin-top: 220px;
+    /* 固定ヘッダーの高さに合わせる */
+}
+
+/* -------------------------------------------
+header
+------------------------------------------- */
+#header {
+    padding: 32px 6%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 10;
+}
+
+#header h1 {
+    display: block;
+    font-size: 6.4rem;
+    padding-bottom: 32px;
+    font-weight: normal;
+}
+
+#nav .menu {
+    display: flex;
+    gap: 16px;
+    font-size: 2.4rem;
+    line-height: 1.5;
+    font-weight: bold;
+    overflow-x: scroll;
+}
+
+/* -------------------------------------------
+main
+------------------------------------------- */
+/* ----------------------
+main-visual
+---------------------- */
+#main-visual {
+    width: 100%;
+    margin-bottom: 80px;
+    background: no-repeat center center/cover;
+    padding-top: 180px;
+}
+
+/* ----------------------
+sub-visual
+---------------------- */
+#sub-visual {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-rows: repeat(2,1fr);
+    gap: 24px;
+    padding: 0 8%;
+    margin-bottom: 80px;
+}
+
+#sub-visual img {
+    height: 100%;
+}
+
+
+/* ----------------------
+concept
+---------------------- */
+#concept {
+    position: relative;
+    margin-bottom: 80px;
+    width: 100%;
+}
+
+#concept img {
+    width: 100%;
+    height: auto;
+}
+
+#concept p {
+    display: block;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    font-size: 2.4vw;
+    height: auto;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* ----------------------
+category
+---------------------- */
+#category {
+    margin-bottom: 80px;
+}
+
+#category h2 {
+    text-align: left;
+    border-bottom: 1px solid;
+    padding-bottom: 40px;
+    margin-bottom: 0;
+}
+
+#category .menu li {
+    border-bottom: 1px solid;
+
+}
+
+#category .menu a {
+    display: block;
+    font-size: 2.4rem;
+    padding: 40px 0;
+    position: relative;
+}
+
+#category .menu a::after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+    transform: rotate(-45deg);
+    position: absolute;
+    right: 3px;
+}
+
+/* ----------------------
+contact
+---------------------- */
+#contact {
+    margin-bottom: 80px;
+    overflow: hidden;
+}
+
+#contact .content {
+    position: relative;
+}
+
+#contact .text {
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.4rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+#contact img {
+    clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 75%);
+    width: 100%;
+}
+
+/* ----------------------
+company
+---------------------- */
+#company {
+    /* height: 840px; */
+    background: url(img/campany.jpg) no-repeat center center/cover;
+    color: #fff;
+    text-shadow: #505050 3px 3px 3px;
+    padding: 80px;
+    margin-bottom: 80px;
+    font-size: 2.4rem;
+}
+
+#company .flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+#company .shop-info {
+    margin-bottom: 64px;
+}
+
+.info {
+    width: 50%;
+}
+
+.map {
+    width: 50%;
+    position: relative;
+}
+
+.shop-info li {
+    padding-bottom: 24px;
+}
+
+
+.company-info li {
+    padding-bottom: 24px;
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* border: none; */
+}
+
+/* ----------------------
+sns
+---------------------- */
+#sns .icon {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 80px;
+}
+
+.icon img {
+    width: 50px;
+}
+
+
+/* -------------------------------------------
+footer
+------------------------------------------- */
+#footer {
+    position: relative;
+}
+
+#footer .footer-bg {
+    background: url(img/grad2.png) no-repeat center center/cover;
+    clip-path: polygon(0 0, 100% 25%, 100% 100%, 0% 100%);
+    padding: 60px 0 40px;
+    text-align: left;
+}
+
+#footer .home {
+    display: block;
+    font-size: 6vw;
+    padding: 0 5%;
+    text-align: left;
+    padding-bottom: 48px;
+}
+
+.to-top {
+    display: block;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    right: 64px;
+    bottom: 96px;
+    border-radius: 50%;
+    background: #EDEAE7;
+    overflow: hidden;
+}
+
+#footer {
+    text-align: center;
+}
+
+#footer small {
+    display: block;
+    text-align: center;
+}
+
+/* -------------------------------------------
+media query
+------------------------------------------- */
+@media (width <=768px) {
+    .wrapper {
+        padding: 0 16px;
+    }
+
+    .sec-title {
+        font-size: 3.2rem;
+        margin-bottom: 40px;
+    }
+    
+    section {
+        scroll-margin-top: 130px;
+        /* 固定ヘッダーの高さに合わせる */
+    }
+    
+
+    /* -------------------------------------------
+    header
+    ------------------------------------------- */
+    #header {
+        height: 100px;
+        padding: 24px;
+    }
+
+    #header h1 {
+        padding: 0;
+    }
+
+    /* ----------------------
+nav
+---------------------- */
+    #nav {
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        z-index: 40;
+        overflow-y: auto;
+        transition: all .6s ease;
+        background: #fff;
+        height: 100vh;
+        width: 100%;
+        color: #000;
+    }
+
+    .open #nav {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    #nav .nav-title {
+        position: fixed;
+        top: 40px;
+        left: 50px;
+    }
+
+    #nav .menu {
+        display: none;
+        text-align: center;
+        margin: 80px auto 24px;
+    }
+
+    .open #nav .menu {
+        display: block;
+    }
+
+    #nav .menu {
+        color: #000;
+        font-weight: bold;
+    }
+
+    #nav .menu li {
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+
+    #nav .menu .btn {
+        display: block;
+        margin: 0 auto;
+        line-height: 2;
+        padding: 12px;
+        width: 250px;
+        border: 1px solid #fff;
+        font-size: 1.6rem;
+        font-weight: bold;
+        position: relative;
+        transition: all .3s;
+    }
+
+    #nav .menu a:hover {
+        opacity: 1;
+        color: red;
+        background: #fff;
+        transition: all .3s;
+    }
+
+    #nav .menu .btn::after {
+        content: "";
+        width: 250px;
+        height: 100%;
+        position: absolute;
+        right: -6px;
+        bottom: -6px;
+        padding: 15px 0;
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        box-sizing: border-box;
+    }
+
+    /* ----------------------
+toggle-btn
+---------------------- */
+    .bg-toggle {
+        height: 100px;
+        width: 100px;
+        background: #fff;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 50;
+        transition: all .6s ease;
+    }
+
+    .toggle-btn {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        z-index: 50;
+        background: #fff;
+        transition: all .6s;
+    }
+
+    .toggle-btn span {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: #000;
+        z-index: 50;
+        transition: all .3s ease;
+    }
+
+    .toggle-btn span:nth-child(1) {
+        top: 20%;
+    }
+
+    .toggle-btn span:nth-child(2) {
+        top: 50%;
+    }
+
+    .toggle-btn span:nth-child(3) {
+        top: 80%;
+    }
+
+    .open .toggle-btn span:nth-child(1) {
+        top: 50%;
+        transform: rotate(-45deg);
+    }
+
+    .open .toggle-btn span:nth-child(2) {
+        transform: rotate(-45deg);
+    }
+
+    .open .toggle-btn span:nth-child(3) {
+        top: 50%;
+        transform: rotate(45deg);
+    }
+
+    /* -------------------------------------------
+    main-visual
+    ------------------------------------------- */
+    #main-visual {
+        padding-top: 100px;
+    }
+
+    /* ----------------------
+    sub-visual
+    ---------------------- */
+    #sub-visual {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    /* -------------------------------------------
+    concept
+    ------------------------------------------- */
+    /* ----------------------
+    company
+    ---------------------- */
+    #company {
+        color: #fff;
+        text-shadow: #505050 3px 3px 3px;
+        padding: 80px;
+        margin-bottom: 80px;
+    }
+
+    #company .flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    #company .shop-info {
+        margin-bottom: 64px;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .map {
+        width: 100%;
+        height: 500px;
+        position: relative;
+    }
+
+    .shop-info li {
+        padding-bottom: 24px;
+    }
+
+    .map iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* border: none; */
+    }
+
+    .company-info li {
+        padding-bottom: 24px;
+    }
+
+    /* -------------------------------------------
+    footer
+    ------------------------------------------- */
+    .to-top {
+        width: 30px;
+        height: 30px;
+        right: 32px;
+        bottom: 100px;
+    }
+
+}
+
+@media (width <=390px) {
+    .sec-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    section {
+        scroll-margin-top: 80px;
+        /* 固定ヘッダーの高さに合わせる */
+    }
+    
+    /* -------------------------------------------
+    header
+    ------------------------------------------- */
+    #header {
+        height: 70px;
+        padding: 14px;
+    }
+
+    #header h1 {
+        font-size: 3.2rem;
+        padding-top: 8px;
+    }
+
+    /* ----------------------
+nav
+---------------------- */
+    #nav {
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        z-index: 40;
+        overflow-y: auto;
+        transition: all .6s ease;
+        background: #fff;
+        height: 100vh;
+        width: 100%;
+        color: #000;
+    }
+
+    .open #nav {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    #nav .nav-title {
+        position: fixed;
+        top: 40px;
+        left: 50px;
+    }
+
+    #nav .menu {
+        display: none;
+        text-align: center;
+        margin: 80px auto 24px;
+    }
+
+    .open #nav .menu {
+        display: block;
+        font-size: 1.6rem;
+    }
+
+    #nav .menu {
+        color: #000;
+        font-weight: bold;
+    }
+
+    #nav .menu li {
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+
+    #nav .menu .btn {
+        display: block;
+        margin: 0 auto;
+        line-height: 2;
+        padding: 12px;
+        width: 250px;
+        border: 1px solid #fff;
+        font-size: 1.2rem;
+        font-weight: bold;
+        position: relative;
+        transition: all .3s;
+    }
+
+    #nav .menu a:hover {
+        opacity: 1;
+        color: red;
+        background: #fff;
+        transition: all .3s;
+    }
+
+    #nav .menu .btn::after {
+        content: "";
+        width: 250px;
+        height: 100%;
+        position: absolute;
+        right: -6px;
+        bottom: -6px;
+        padding: 15px 0;
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        box-sizing: border-box;
+    }
+
+    /* ----------------------
+toggle-btn
+---------------------- */
+    .bg-toggle {
+        height: 70px;
+        width: 70px;
+        background: #fff;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 50;
+        transition: all .6s ease;
+    }
+
+    .toggle-btn {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        z-index: 50;
+        background: #fff;
+        transition: all .6s;
+    }
+
+    .toggle-btn span {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: #000;
+        z-index: 50;
+        transition: all .3s ease;
+    }
+
+    .toggle-btn span:nth-child(1) {
+        top: 20%;
+    }
+
+    .toggle-btn span:nth-child(2) {
+        top: 50%;
+    }
+
+    .toggle-btn span:nth-child(3) {
+        top: 80%;
+    }
+
+    .open .toggle-btn span:nth-child(1) {
+        top: 50%;
+        transform: rotate(-45deg);
+    }
+
+    .open .toggle-btn span:nth-child(2) {
+        transform: rotate(-45deg);
+    }
+
+    .open .toggle-btn span:nth-child(3) {
+        top: 50%;
+        transform: rotate(45deg);
+    }
+
+    /* -------------------------------------------
+    main-visual
+    ------------------------------------------- */
+    #main-visual {
+        padding-top: 70px;
+        margin-bottom: 40px;
+    }
+
+    /* ----------------------
+    sub-visual
+    ---------------------- */
+    #sub-visual {
+        margin-bottom: 40px;
+    }
+    
+    /* ----------------------
+    concept
+    ---------------------- */
+    #concept {
+        margin-bottom: 40px;
+    }
+
+    /* ----------------------
+    category
+    ---------------------- */
+    #category {
+        margin-bottom: 40px;
+    }
+
+    #category .menu a {
+        font-size: 1rem;
+        padding: 20px 0;
+    }
+
+    #category .menu a::after {
+        width: 8px;
+        height: 8px;
+    }
+
+    /* ----------------------
+    contact
+    ---------------------- */
+    #contact {
+        margin-bottom: 40px;
+    }
+
+    #contact .text {
+        font-size: 1rem;
+    }
+
+    /* ----------------------
+    company
+    ---------------------- */
+    #company {
+        font-size: 1rem;
+        padding: 48px;
+        margin-bottom: 40px;
+    }
+
+    #company .shop-info {
+        margin-bottom: 16px;
+    }
+
+    .shop-info li {
+        padding-bottom: 10px;
+    }
+
+    .company-info li {
+        padding-bottom: 10px;
+    }
+
+    .map {
+        height: 250px;
+    }
+
+    .map iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* border: none; */
+    }
+    /* ----------------------
+    sns
+    ---------------------- */
+    #sns .icon {
+        margin-bottom: 40px;
+        gap: 8px;
+    }
+
+    .icon img {
+        width: 20px;
+    }
+
+    /* -------------------------------------------
+    footer
+    ------------------------------------------- */
+    #footer .footer-bg {
+        padding: 30px 0 20px;
+    }
+
+    #footer .home {
+        padding: 0 5%;
+        padding-bottom: 24px;
+    }
+
+    .to-top {
+        width: 20px;
+        height: 20px;
+        right: 32px;
+        bottom: 52px;
+    }
+
+    small {
+        font-size: .8rem;
+    }
+}
