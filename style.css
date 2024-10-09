@@ -275,7 +275,7 @@ footer
 }
 
 #footer .footer-bg {
-    background: url(img/grad2.png) no-repeat center center/cover;
+    background: url(https://github.com/takeyou-key/simple/blob/main/grad2.png?raw=true) no-repeat center center/cover;
     clip-path: polygon(0 0, 100% 25%, 100% 100%, 0% 100%);
     padding: 60px 0 40px;
     text-align: left;
