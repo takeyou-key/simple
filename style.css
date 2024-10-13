@@ -809,16 +809,10 @@ toggle-btn
         margin-bottom: 40px;
     }
 
-    #category .menu a {
-        font-size: 1rem;
-        padding: 20px 0;
+    .menu-title {
+        font-size: 1.6rem;
     }
-
-    #category .menu a::after {
-        width: 8px;
-        height: 8px;
-    }
-
+    
     /* ----------------------
     contact
     ---------------------- */
