@@ -836,7 +836,7 @@ toggle-btn
     }
 
     #company .shop-info {
-        font-size: 1rem;
+        margin-bottom: 40px;
     }
 
     .shop-info li {
@@ -845,7 +845,7 @@ toggle-btn
     }
 
     .company-info li {
-        margin-bottom: 16px;
+        font-size: 1rem;
         padding-bottom: 10px;
     }
 
