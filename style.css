@@ -363,7 +363,7 @@ footer
 /* -------------------------------------------
 media query
 ------------------------------------------- */
-@media (width <=768px) {
+@media (width <= 768px) {
     .wrapper {
         padding: 0 16px;
     }
@@ -610,7 +610,7 @@ toggle-btn
 
 }
 
-@media (width <=390px) {
+@media (width <= 390px) {
     .sec-title {
         font-size: 2rem;
         margin-bottom: 20px;
