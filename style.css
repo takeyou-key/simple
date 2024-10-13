@@ -812,7 +812,9 @@ toggle-btn
     .menu-title {
         font-size: 1.6rem;
     }
-    
+
+    .sub-menu-item {
+        font-size: 1rem;
     /* ----------------------
     contact
     ---------------------- */
