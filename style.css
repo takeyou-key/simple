@@ -98,7 +98,7 @@ sub-visual
 ---------------------- */
 #sub-visual ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 2fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     grid-template-rows: repeat(2, 1fr);
     gap: 24px;
     padding: 0 8%;
