@@ -1,6 +1,6 @@
 'use strict';
 
-$(document).ready(function () {
+$(function () {
     $('.toggle-btn').click(function () {
         $('#header').toggleClass('open')
     });
@@ -21,4 +21,16 @@ $(window).scroll(function () {
 });
 $(".to-top").click(function () {
     $("body,html").animate({ scrollTop: 0 }, 800); // 800msかけて上に戻る
+});
+
+//アコーディオンをクリックした時の動作
+$('.menu-title').on('click', function() {//タイトル要素をクリックしたら
+	var findElm = $(this).next(".sub-menu-title");//直後のアコーディオンを行うエリアを取得し
+	$(findElm).slideToggle();//アコーディオンの上下動作
+    
+	if($(this).hasClass('close')){//タイトル要素にクラス名closeがあれば
+		$(this).removeClass('close');//クラス名を除去し
+	}else{//それ以外は
+		$(this).addClass('close');//クラス名closeを付与
+	}
 });
