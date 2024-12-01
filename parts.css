@@ -1,0 +1,331 @@
+@charset "UTF-8";
+
+/* -------------------------------------------
+LOADING
+------------------------------------------- */
+/* Loading背景画面設定　*/
+#splash {
+    /*fixedで全面に固定*/
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: #eee;
+    text-align: center;
+    color: #fff;
+}
+
+/* Loading画像中央配置　*/
+#splash_logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Loading アイコンの大きさ設定　*/
+#splash_logo svg {
+    width: 400px;
+}
+
+/*=============== SVGアニメーション内の指定 =================*/
+
+/*アニメーション前の指定*/
+#mask path {
+    fill-opacity: 0;
+    /*最初は透過0で見えない状態*/
+    transition: fill-opacity .5s;
+    /*カラーがつく際のアニメーション0.5秒で変化*/
+    fill: none;
+    /*塗りがない状態*/
+    stroke: #333;
+    /*線の色*/
+}
+
+/*アニメーション後に.doneというクラス名がで付与された時の指定*/
+#mask.done path {
+    fill: #333;
+    /*塗りの色*/
+    fill-opacity: 1;
+    /*透過1で見える状態*/
+    stroke: none;
+    /*線の色なし*/
+}
+
+/*==================================================
+　5-3-1 中心から外に線が伸びる（下部）
+===================================*/
+
+.gnavi li a{
+    /*線の基点とするためrelativeを指定*/
+	position: relative;
+}
+
+.gnavi li a::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    /*線の形状*/
+    width: 80%;
+    height: 2px;
+    background: #01579B;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: center top;/*上部中央基点*/
+}
+
+/*現在地とhoverの設定*/
+.gnavi li.current a::after,
+.gnavi li a:hover::after {
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+/*==================================================
+スライダーのためのcss
+===================================*/
+.slider {
+    /*横幅94%で左右に余白を持たせて中央寄せ*/
+    width: 50vw;
+    margin: 0 auto;
+}
+
+
+.slider img {
+    width: 100%;
+    height: 500px;
+    /*スライダー内の画像を横幅100%に*/
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 9/14;
+}
+
+/*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+
+.slider .slick-slide {
+    margin: 0 10px;
+}
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev,
+.slick-next {
+    position: absolute;
+    /*絶対配置にする*/
+    top: 42%;
+    cursor: pointer;
+    /*マウスカーソルを指マークに*/
+    outline: none;
+    /*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #666;
+    /*矢印の色*/
+    border-right: 2px solid #666;
+    /*矢印の色*/
+    height: 15px;
+    width: 15px;
+}
+
+.slick-prev {
+    /*戻る矢印の位置と形状*/
+    left: -2%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {
+    /*次へ矢印の位置と形状*/
+    right: -2%;
+    transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+    text-align: center;
+    margin: 20px 0 0 0;
+}
+
+.slick-dots li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.slick-dots button {
+    color: transparent;
+    outline: none;
+    width: 8px;
+    /*ドットボタンのサイズ*/
+    height: 8px;
+    /*ドットボタンのサイズ*/
+    display: block;
+    border-radius: 50%;
+    background: #ccc;
+    /*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button {
+    background: #333;
+    /*ドットボタンの現在地表示の色*/
+}
+
+/* -------------------------------------------
+fadein
+------------------------------------------- */
+/* その場で */
+.fadeIn {
+    animation-name: fadeInAnime;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+@keyframes fadeInAnime {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* 下から */
+
+.fadeUp {
+    animation-name: fadeUpAnime;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 上から */
+
+.fadeDown {
+    animation-name: fadeDownAnime;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeDownAnime {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ----------------------
+左から
+---------------------- */
+
+.fadeLeft {
+    animation-name: fadeLeftAnime;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: .5s;
+    opacity: 0;
+}
+
+@keyframes fadeLeftAnime {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ----------------------
+右から
+---------------------- */
+
+.fadeRight {
+    animation-name: fadeRightAnime;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: .5s;
+    opacity: 0;
+}
+
+@keyframes fadeRightAnime {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* -------------------------------------------
+to-top
+------------------------------------------- */
+.to-top {
+    display: block;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    right: 16px;
+    bottom: 32px;
+    /* background: rgba(237, 234, 231, 1); */
+    z-index: 10;
+}
+
+.to-top>div {
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-color: transparent transparent #333 transparent;
+    border-width: 0px 25px 50px 25px;
+}
+
+.to-top span {
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    transform: translateY(-60%) translateX(-30%) rotate(-63deg);
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+}
+
+
+@media (width <=1024px) {
+    .slider {
+        width: 94vw;
+    }
+
+    .to-top {
+        display: none;
+        z-index: 0;
+    }
+
+    .to-top>div {
+        display: none;
+    }
+}
